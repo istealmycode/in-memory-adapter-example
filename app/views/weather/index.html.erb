@@ -1,0 +1,7 @@
+<h1>Weather App</h1>
+
+<%= form_tag('/weather/search', method: 'get') do %>
+  <%= label_tag 'location', 'Enter Location:' %>
+  <%= text_field_tag 'location', nil, placeholder: 'e.g., 90210' %>
+  <%= submit_tag 'Search' %>
+<% end %>

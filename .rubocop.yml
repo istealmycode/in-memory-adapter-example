@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+    - 'bin/bundle'
+    - 'config/initializers/**/*'
+    - 'app/clients/**/repository.rb'
+  NewCops: enable
+  SuggestExtensions: false
+Style/Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context']

@@ -1,0 +1,14 @@
+<h1>Weather for <%= @weather.location.name %></h1>
+
+<% if @weather.valid? %>
+  <p>Temperature: <%= @weather.current.temp_f %>°F</p>
+  <p>Condition: <%= @weather.condition.text %></p>
+<% else %>
+  <p>Failed to retrieve weather information. <%= @weather.errors.full_messages.join(', ') %></p>
+<% end %>
+
+<%= form_tag('/weather/search', method: 'get') do %>
+  <%= label_tag 'location', 'Enter Location:' %>
+  <%= text_field_tag 'location', nil, placeholder: 'e.g., 90210' %>
+  <%= submit_tag 'Search' %>
+<% end %>
