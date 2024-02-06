@@ -1,25 +1,46 @@
-# README
+# WeatherApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WeatherApp is a simple Rails application that fetches weather information from weatherapi.com. The purpose of this code is show how an api client which has both in memory and http adapters can be used for local development and to run tests against without using tools like webmock or vcr. 
 
-Things you may want to cover:
+By default, the in memory adapter will be used. To use the http adapter setup your .env file to set  your WEATHER_API_KEY and set WEATHER_API_CLIENT=WeatherClient::HttpAdapter
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+Make sure you have the following installed:
 
-* Database creation
+- Ruby
+- Rails
 
-* Database initialization
+### Installation
 
-* How to run the test suite
+1. Clone the repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+   ```bash
+   git clone https://github.com/istealmycode/in-memory-adapter-example.git
+   ```
+2. Install dependencies:
 
-* Deployment instructions
+    ```
+    cd weather-app
+    bundle install
+    ```
 
-* ...
-# in-memory-adapter-example
+### Usage
+1. Run the rails server
+
+    ```bash
+    bundle exec rails server
+    ```
+2. Connect to the server at http://127.0.0.1:3000
+
+### Tests
+
+1. Run rspec
+
+    ```bash
+    bundle exec rspec
+    ```
+
+
