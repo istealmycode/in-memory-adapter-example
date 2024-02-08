@@ -1,7 +1,11 @@
-<h1>Weather App</h1>
+<% if @weather && @weather.valid? %>
+  <h2>Weather for <%= @weather.location.name %></h2>
+  <p>Temperature: <%= @weather.current.temp_f %>°F</p>
+  <p>Condition: <%= @weather.condition.text %></p>
+<% end %>
 
-<%= form_tag('/weather/search', method: 'get') do %>
+<%= form_tag(weather_path, method: 'get') do %>
   <%= label_tag 'location', 'Enter Location:' %>
   <%= text_field_tag 'location', nil, placeholder: 'e.g., 90210' %>
   <%= submit_tag 'Search' %>
-<% end %>
+<% end %>  
